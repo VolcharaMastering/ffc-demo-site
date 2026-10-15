@@ -1,0 +1,16 @@
+@use "../abstracts" as *;
+
+// css custom properties for runtime use
+:root {
+  --color-bg: #{$color-bg};
+  --color-surface: #{$color-surface};
+  --color-border: #{$color-border};
+  --color-text: #{$color-text};
+  --color-text-muted: #{$color-text-muted};
+  --color-accent: #{$color-accent};
+  --font-sans: var(--font-geist-sans), "Segoe UI", system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --gutter: #{$gutter};
+
+  color-scheme: dark;
+}

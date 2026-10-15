@@ -1,0 +1,87 @@
+@use "abstracts" as *;
+.button {
+  @include button-reset;
+  @include flex-center(7px);
+  border: 1px solid transparent;
+  border-radius: $radius-md;
+  flex-shrink: 0;
+  font-size: 13px;
+  justify-content: center;
+  line-height: 1.4;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color $duration-base, border-color $duration-base, color $duration-base;
+  &:hover {
+    text-decoration: none;
+  }
+  &:disabled {
+    background: $color-surface;
+    border-color: $color-border;
+    color: $color-text-dim;
+    cursor: not-allowed;
+  }
+}
+
+.outline {
+  border-color: $color-border;
+  color: $color-accent;
+  &:hover:not(:disabled) {
+    background: alpha($color-accent, 0.1);
+    border-color: $color-accent;
+    color: $color-accent;
+  }
+}
+
+.primary {
+  background: $color-accent;
+  color: $color-bg;
+  font-weight: $weight-semibold;
+  &:hover:not(:disabled) {
+    background: $color-accent-hover;
+    color: $color-bg;
+  }
+}
+
+.success {
+  background: $color-success;
+  color: $color-bg;
+  font-weight: $weight-semibold;
+  &:hover:not(:disabled) {
+    background: alpha($color-success, 0.85);
+    color: $color-bg;
+  }
+}
+
+.ghost {
+  color: $color-accent;
+  &:hover:not(:disabled) {
+    background: alpha($color-accent, 0.1);
+    color: $color-accent-light;
+  }
+}
+
+.sm {
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+.md {
+  min-height: 40px;
+  padding: 8px 15px;
+}
+
+.icon {
+  height: 44px;
+  padding: 0;
+  width: 44px;
+}
+
+.pill {
+  border-radius: $radius-pill;
+}
+
+.selected {
+  background: alpha($color-accent, 0.12);
+  border-color: $color-accent;
+  color: $color-text;
+}

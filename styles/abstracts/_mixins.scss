@@ -1,0 +1,134 @@
+@use "sass:map";
+@use "variables" as *;
+@use "functions" as *;
+
+// apply styles from a breakpoint and up
+@mixin up($name) {
+  @media (min-width: map.get($breakpoints, $name)) {
+    @content;
+  }
+}
+
+// apply styles to the reduced motion preference
+@mixin reduced-motion {
+  @media (prefers-reduced-motion: reduce) {
+    @content;
+  }
+}
+
+// set sans font with size and weight
+@mixin text-sans($size, $weight: $weight-regular, $line-height: normal) {
+  font-family: $font-sans;
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line-height;
+}
+
+// set mono font with size and weight
+@mixin text-mono($size, $weight: $weight-regular, $line-height: normal) {
+  font-family: $font-mono;
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line-height;
+}
+
+// small uppercase label for groups and legends
+@mixin text-label($color: $color-text-dim) {
+  color: $color;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+// center content with max width and side gutters
+@mixin container($max: $container-max) {
+  margin-inline: auto;
+  max-width: $max;
+  padding-inline: $gutter;
+  width: 100%;
+}
+
+// reset native button look
+@mixin button-reset {
+  appearance: none;
+  background: none;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  padding: 0;
+}
+
+// bordered accent button with soft hover
+@mixin outline-button($padding: 7px 12px) {
+  background: transparent;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  color: $color-accent;
+  cursor: pointer;
+  font-size: 13px;
+  padding: $padding;
+  transition: all $duration-base $ease;
+
+  &:hover {
+    background: alpha($color-accent, 0.1);
+    border-color: $color-accent;
+    color: $color-accent;
+    text-decoration: none;
+  }
+}
+
+// filled accent button with glow on hover
+@mixin solid-button {
+  background: $color-accent;
+  border: 0;
+  border-radius: $radius-md;
+  color: $color-bg;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: $weight-semibold;
+  padding: 9px 18px;
+  transition: all $duration-base $ease;
+
+  &:hover {
+    background: $color-accent-hover;
+    box-shadow: 0 0 20px alpha($color-accent, 0.4);
+    color: $color-bg;
+    text-decoration: none;
+  }
+}
+
+// dark panel with border and rounded corners
+@mixin panel($background: $color-surface, $radius: $radius-xl) {
+  background: $background;
+  border: 1px solid $color-border;
+  border-radius: $radius;
+}
+
+// accent outline for keyboard focus
+@mixin focus-ring {
+  &:focus-visible {
+    outline: 2px solid $color-accent;
+    outline-offset: 2px;
+  }
+}
+
+// hide content visually but keep it for screen readers
+@mixin visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+// flex row with centered items
+@mixin flex-center($gap: 0) {
+  align-items: center;
+  display: flex;
+  gap: $gap;
+}

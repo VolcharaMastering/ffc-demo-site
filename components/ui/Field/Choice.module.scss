@@ -1,0 +1,59 @@
+@use "abstracts" as *;
+.checkbox {
+  @include flex-center(9px);
+  cursor: pointer;
+  font-size: 13px;
+  min-height: 36px;
+  input {
+    accent-color: $color-accent;
+    flex: none;
+    height: 16px;
+    width: 16px;
+  }
+  &:has(input:disabled) {
+    cursor: not-allowed;
+    opacity: 0.55;
+  }
+}
+
+.group {
+  border: 0;
+  min-width: 0;
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-block: 6px;
+}
+
+.radio {
+  @include flex-center(7px);
+  background: $color-bg;
+  border: 1px solid $color-border;
+  border-radius: $radius-pill;
+  color: $color-text-muted;
+  cursor: pointer;
+  font-size: 13px;
+  min-height: 36px;
+  padding: 5px 10px;
+  input {
+    accent-color: $color-accent;
+    flex: none;
+    height: 14px;
+    width: 14px;
+  }
+  &:has(input:checked) {
+    border-color: $color-accent;
+    color: $color-text;
+  }
+  &:has(input:focus-visible) {
+    outline: 2px solid $color-accent;
+    outline-offset: 2px;
+  }
+  &:has(input:disabled) {
+    cursor: not-allowed;
+    opacity: 0.55;
+  }
+}

@@ -1,0 +1,126 @@
+@use "abstracts" as *;
+
+.header {
+  backdrop-filter: blur(12px);
+  background: alpha($color-bg, 0.9);
+  border-bottom: 1px solid $color-border;
+  position: sticky;
+  top: 0;
+  z-index: $z-header;
+}
+
+.inner {
+  @include container;
+  @include flex-center(16px);
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-block: 9px;
+
+  @include up(lg) {
+    flex-wrap: nowrap;
+  }
+}
+
+.logo {
+  @include flex-center(10px);
+  color: $color-text;
+  flex: none;
+
+  &:hover {
+    color: $color-text;
+    text-decoration: none;
+  }
+}
+
+.logo-mark {
+  flex: none;
+  height: 26px;
+  width: 26px;
+}
+
+.logo-text {
+  font-size: 16px;
+  font-weight: $weight-semibold;
+  letter-spacing: -0.2px;
+  white-space: nowrap;
+}
+
+.inner .menu-toggle {
+  margin-left: auto;
+
+  @include up(lg) {
+    display: none;
+  }
+}
+
+.nav {
+  align-items: center;
+  border-top: 1px solid $color-border;
+  display: none;
+  gap: 10px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-height: calc(100dvh - 80px);
+  overflow-y: auto;
+  padding-block: 12px;
+  width: 100%;
+
+  &.is-open {
+    display: grid;
+  }
+
+  @include up(lg) {
+    border-top: 0;
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+    max-height: none;
+    overflow: visible;
+    padding-block: 0;
+    width: auto;
+
+    &.is-open {
+      display: flex;
+    }
+  }
+}
+
+.nav .link {
+  min-height: 44px;
+
+  @include up(lg) {
+    min-height: 34px;
+  }
+}
+
+.nav .badge {
+  grid-column: 1 / -1;
+  justify-content: center;
+  order: 1;
+  padding: 6px 11px;
+  text-align: center;
+
+  @include up(lg) {
+    order: 0;
+    white-space: nowrap;
+  }
+}
+
+.badge-dot {
+  background: $color-success;
+  border-radius: $radius-round;
+  height: 6px;
+  flex: none;
+  width: 6px;
+}
+
+.nav .docs {
+  min-height: 44px;
+
+  @include up(lg) {
+    min-height: 34px;
+  }
+}
+
+.docs-icon {
+  font-size: 14px;
+}

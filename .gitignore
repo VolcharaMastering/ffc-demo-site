@@ -15,7 +15,9 @@
 
 # next.js
 /.next/
+/.claude/
 /out/
+/about-project/
 
 # production
 /build

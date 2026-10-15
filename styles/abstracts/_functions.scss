@@ -1,0 +1,13 @@
+@use "sass:color";
+@use "sass:map";
+@use "variables" as *;
+
+// return the same color with a new opacity
+@function alpha($color, $amount) {
+  @return color.change($color, $alpha: $amount);
+}
+
+// return the min-width value for a breakpoint name
+@function breakpoint-value($name) {
+  @return map.get($breakpoints, $name);
+}

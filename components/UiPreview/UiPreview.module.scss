@@ -1,0 +1,42 @@
+@use "abstracts" as *;
+.preview {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 1100px;
+  margin-inline: auto;
+  padding-block: 32px;
+}
+
+.intro {
+  h1 {
+    font-size: 28px;
+    margin-bottom: 8px;
+  }
+  p {
+    color: $color-text-muted;
+  }
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: minmax(0, 1fr);
+  @include up(md) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

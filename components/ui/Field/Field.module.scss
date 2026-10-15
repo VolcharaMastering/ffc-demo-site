@@ -1,0 +1,29 @@
+@use "abstracts" as *;
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.label {
+  color: $color-text-muted;
+  font-size: 13px;
+}
+
+.hidden-label {
+  @include visually-hidden;
+}
+
+.required, .error {
+  color: $color-error;
+}
+
+.error, .hint {
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.hint {
+  color: $color-text-muted;
+}

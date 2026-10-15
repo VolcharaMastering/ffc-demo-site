@@ -1,0 +1,42 @@
+@use "abstracts" as *;
+.notice {
+  border: 1px solid;
+  border-radius: $radius-lg;
+  padding: 14px 16px;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: $weight-semibold;
+  margin-bottom: 5px;
+}
+
+.content {
+  color: $color-text-body;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.info {
+  background: alpha($color-accent, 0.07);
+  border-color: alpha($color-accent, 0.35);
+  color: $color-accent;
+}
+
+.success {
+  background: alpha($color-success, 0.07);
+  border-color: alpha($color-success, 0.35);
+  color: $color-success;
+}
+
+.warning {
+  background: alpha($color-warning, 0.07);
+  border-color: alpha($color-warning, 0.35);
+  color: $color-warning;
+}
+
+.error {
+  background: alpha($color-error, 0.07);
+  border-color: alpha($color-error, 0.35);
+  color: $color-error;
+}

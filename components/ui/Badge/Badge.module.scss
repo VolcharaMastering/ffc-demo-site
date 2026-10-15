@@ -1,0 +1,42 @@
+@use "abstracts" as *;
+.badge {
+  @include flex-center(7px);
+  border: 1px solid $color-border;
+  border-radius: $radius-pill;
+  display: inline-flex;
+  font-size: 12px;
+  line-height: 1.5;
+  padding: 4px 10px;
+}
+
+.dot {
+  background: currentColor;
+  border-radius: $radius-round;
+  flex: none;
+  height: 6px;
+  width: 6px;
+}
+
+.neutral {
+  color: $color-text-muted;
+}
+
+.accent {
+  background: alpha($color-accent, 0.1);
+  color: $color-accent;
+}
+
+.success {
+  background: alpha($color-success, 0.1);
+  color: $color-success;
+}
+
+.error {
+  background: alpha($color-error, 0.1);
+  color: $color-error;
+}
+
+.warning {
+  background: alpha($color-warning, 0.1);
+  color: $color-warning;
+}

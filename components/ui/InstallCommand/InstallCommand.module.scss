@@ -1,0 +1,15 @@
+@use "abstracts" as *;
+.command {
+  @include panel($color-surface, $radius-md);
+  @include flex-center(10px);
+  min-width: 0;
+  padding: 7px 10px;
+}
+
+.code {
+  @include text-mono(13px);
+  flex: 1;
+  min-width: 0;
+  overflow-x: auto;
+  white-space: nowrap;
+}

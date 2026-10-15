@@ -1,0 +1,41 @@
+@use "abstracts" as *;
+
+.footer {
+  background: $color-surface;
+  border-top: 1px solid $color-border;
+  margin-top: 24px;
+}
+
+.inner {
+  @include container;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-block: 32px;
+  text-align: center;
+}
+
+.logo {
+  filter: invert(1);
+  height: 40px;
+  opacity: 0.85;
+  width: 40px;
+}
+
+.copyright {
+  color: $color-text-muted;
+  font-size: 13px;
+}
+
+.links {
+  @include flex-center(18px);
+  flex-wrap: wrap;
+  font-size: 13px;
+  justify-content: center;
+}
+
+.license {
+  color: $color-text-dim;
+  font-size: 12px;
+}

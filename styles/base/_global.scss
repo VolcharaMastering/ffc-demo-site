@@ -1,0 +1,76 @@
+@use "../abstracts" as *;
+
+body {
+  @include text-sans(16px, $weight-regular, 1.5);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background:
+    radial-gradient(1000px 500px at 80% -10%, alpha($color-purple, 0.1), transparent 60%),
+    radial-gradient(900px 500px at 0% 0%, alpha($color-accent, 0.08), transparent 55%),
+    $color-bg;
+  color: $color-text;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+// main area fills the space between header and footer
+main {
+  @include container;
+  flex: 1 0 auto;
+}
+
+a {
+  color: $color-accent;
+  transition: all $duration-base $ease;
+
+  &:hover {
+    color: $color-accent-light;
+    text-decoration: underline;
+  }
+}
+
+::selection {
+  background: $color-accent;
+  color: $color-bg;
+}
+
+:focus-visible {
+  outline: 2px solid $color-accent;
+  outline-offset: 2px;
+}
+
+input,
+textarea {
+  &:focus {
+    border-color: $color-accent;
+    box-shadow: 0 0 0 3px alpha($color-accent, 0.12);
+  }
+}
+
+::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: $color-surface-sunken;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $color-border;
+  border-radius: $radius-xs;
+
+  &:hover {
+    background: $color-accent;
+  }
+}
+
+@include reduced-motion {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

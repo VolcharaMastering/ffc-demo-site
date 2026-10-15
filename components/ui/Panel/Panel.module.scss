@@ -1,0 +1,22 @@
+@use "abstracts" as *;
+.panel {
+  @include panel;
+  min-width: 0;
+}
+
+.header {
+  @include flex-center(12px);
+  border-bottom: 1px solid $color-border;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 11px 14px;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: $weight-semibold;
+}
+
+.body {
+  padding: 14px;
+}
